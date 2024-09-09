@@ -4,6 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import { CiCircleQuestion } from "react-icons/ci";
 import { IoMdSettings } from "react-icons/io";
 import { TbGridDots } from "react-icons/tb";
+import SwiftBoxLogo from '../assets/logo.png';
 import Avatar from "react-avatar";
 
 const Navbar = () => {
@@ -14,11 +15,7 @@ const Navbar = () => {
           <div className="p-3 hover:bg-gray-200 rounded-full cursor-pointer">
             <GiHamburgerMenu />
           </div>
-          <img
-            className="w-8"
-            src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_256px.png"
-            alt=""
-          />
+          <img className='w-12' src={SwiftBoxLogo} alt="Swift Box Logo" />
           <h1 className="text-2xl text-gray-500 font-medium">SwiftBox</h1>
         </div>
       </div>
