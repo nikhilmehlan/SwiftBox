@@ -1,4 +1,4 @@
-import React from "react";
+import React,  { useState }  from "react";
 import { LuPencil } from "react-icons/lu";
 import { MdMore, MdMoveToInbox, MdOutlineDrafts } from "react-icons/md";
 import { IoStarOutline } from "react-icons/io5";
@@ -31,6 +31,8 @@ const SidebarItems = [
   },
 ];
 const Sidebar = () => {
+  const [selected, setSelected] = useState(0);
+
   return (
     <div className="w-[15%]">
       <div className="p-3">
@@ -42,7 +44,12 @@ const Sidebar = () => {
       <div className="text-gray-600">
         {SidebarItems.map((item, index) => {
           return (
-            <div className="flex items-center pl-6 py-1 rounded-r-full gap-4 my-2 hover:cursor-pointer hover:bg-gray-200">
+            <div  onClick={() => setSelected(index)}
+            className={` ${
+              selected == index
+                ? "bg-blue-200"
+                : "text-gray-600"
+            } flex items-center pl-6 py-1 rounded-r-full gap-4 my-2 hover:cursor-pointer hover:bg-gray-200`}>
               {item.icon}
               <p>{item.text}</p>
             </div>
