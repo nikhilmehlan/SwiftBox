@@ -4,6 +4,8 @@ import { MdMore, MdMoveToInbox, MdOutlineDrafts } from "react-icons/md";
 import { IoStarOutline } from "react-icons/io5";
 import { GoClock } from "react-icons/go";
 import { LuSendHorizonal } from "react-icons/lu";
+import { useDispatch } from "react-redux";
+import { setOpen } from "../redux/appSlice";
 const SidebarItems = [
   {
     icon: <MdMoveToInbox size={"20px"} color="black" />,
@@ -32,11 +34,11 @@ const SidebarItems = [
 ];
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
-
+  const dispatch=useDispatch();
   return (
     <div className="w-[15%]">
       <div className="p-3">
-        <button className="flex items-center gap-2 bg-[#C2E6FE] p-4 rounded-2xl hover:shadow-md">
+        <button onClick={()=>dispatch(setOpen(true))} className="flex items-center gap-2 bg-[#C2E6FE] p-4 rounded-2xl hover:shadow-md">
           <LuPencil size={"24px"} />
           Compose
         </button>
